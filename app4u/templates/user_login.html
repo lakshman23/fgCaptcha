@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block head %}User Login Page{% endblock %}
+{% block content %}
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/style.css' %}" />
+    <!-- <form method="post" action=".">{% csrf_token %} -->
+    <div class = "combine">
+		<div>
+			<img class = "user" src="user.jpg">
+		</div>
+		<div>
+    <form>
+   <p style = "text-align: center">Admin Login Form</p>
+				<pre> User Name  <input type = "text" name = "admin_name" width = "100" placeholder = "admin name"></pre>
+				<pre> Password    <input type = "password" name = "password" placeholder = "password"></pre>
+				<p align = "center"><button type = "button" class = "btn btn-success">Login</button></p>
+    </form>
+    </div>
+	</div>
+{% endblock %}

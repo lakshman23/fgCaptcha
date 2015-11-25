@@ -1,0 +1,41 @@
+body {
+	background: white url("images/background.png");
+	height: 1000;
+	width:1000;
+}
+
+h1 {
+	color: white;
+	text-align: center;
+	padding-top: 50;
+}
+
+img {
+/*	background: white url("images/user.jpg") no-repeat right bottom;*/
+	height: 100;
+	width: 100;
+	padding-left: 150;
+	padding-top: 20;
+}
+
+div.combine {
+	display: flex;
+}
+
+img.admin {
+	padding-top: 100;
+	padding-right: 200;
+}
+
+pre {
+	font-size: 20;
+}
+
+form {
+	margin-top: 70;
+	height: 200;
+	width: 360;
+	padding-top: 50;
+	padding-left: 50;
+	padding-bottom: 0;
+}

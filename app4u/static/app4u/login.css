@@ -1,0 +1,9 @@
+<style>
+.tdStyle
+{
+	background-color: red;
+background-image:url('{{ STATIC_URL }}images/sample.JPG');
+background-repeat:no-repeat;
+background-size:100%;
+}
+</style>
