@@ -1,21 +1,26 @@
-<html>
-<head>
-	<title>Admin Login Page</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<h1>Welcome to fgCaptcha Project</h1>
-	<div class = "combine">
-		<div>
-			<img class = "admin" src="Admin.png">
-		</div>
-		<div>
-			<form>
-				<p style = "text-align: center">Admin LOGIN Form</p>
-				<pre> Admin Name  <input type = "text" name = "admin name" width = "100" placeholder = "admin name"></pre>
-				<pre> Password    <input type = "password" name = "password" placeholder = "password"></pre>
-				<p align = "center"><button type = "button" class = "btn btn-success">Login</button></p>
-			</form>
-		</div>
-	</div>
-</body>
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}Adminlogin{% endblock %}
+​
+{% block content %}
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+ {% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
+    <div id = "login">
+        <div id = "title"><h1>Discussion Forum</h1></div>
+        <div id = "input">
+    <form action="done">
+    <!-- {% csrf_token %} -->
+            <label for="id_username">Username:</label>{{ form.username }}
+            <label for="id_password">Password:</label>{{ form.password }}
+            <br><p>Please select the real image below.</p>
+        <input type="submit" value="Login" />
+        <!-- <input type="hidden" name="next" value="/home" /> -->
+    </form>
+</div>
+    </div>
+    <a href="/register">Register</a>
+​
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block head %}<marquee behavior="alternate">Welcome to fgCaptcha Test</marquee>{% endblock %}
+{% block content %}
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/bootstrap.css' %}" />
+    <!-- <form method="post" action=".">{% csrf_token %} -->
+     <!-- <form> 
+       method="post" action=".">{% csrf_token %} -->
+        <!-- <br><p align="right" >New User?</p> -->
+    <!-- <a href="register/">
+    {% load staticfiles %}
+    <img src="{% static "app4u/images/new.jpg" %}" alt="My image"/ align = "right"  height=100></a>
+    <a href="admin_login/"><br>
+    {% load staticfiles %}
+    <img src="{% static "app4u/images/admin.gif" %}" alt="My image"/ align="center" height=100></a>
+     <a href="user_login/"><br><br><br>
+    {% load staticfiles %}
+    <img src="{% static "app4u/images/user.gif" %}" alt="My image"/ style = "padding-top: 30"  height=100></a>
+    <input type="hidden" name="next" value="/admin_login" /> -->
+    <!-- </form> -->
+    <!--  -->
+    <div class = "combine">
+        <div class = "logos">
+            <a href = "admin_login"><button type = "button" class = "btn btn-success btn-lg">Admin Mode</button></a>
+            <br><br><br>
+            <a href="user_login"><button type = "button" size = "" class = "btn btn-danger btn-lg">User Mode&nbsp&nbsp</button></a>
+        </div>
+        <div class = "images">
+            <img class = "home image" src = "background.jpg" id = "img">
+        </div>
+    </div>
+{% endblock %}
+
+<!-- 
+{% load staticfiles %}
+<img src="{% static "my_app/myexample.jpg" %}" alt="My image"/> -->

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block head %}User Login Page{% endblock %}
+{% block content %}
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
+    <div id = "login">
+        <div id = "title"><h1>Discussion Forum</h1></div>
+        <div id = "input">
+    <form method="post" action=".">{% csrf_token %}
+            <label for="id_username">Username:</label>{{ form.username }}
+            <label for="id_password">Password:</label>{{ form.password }}
+            <br><p>Please select the real image below.</p>
+
+        <input type="hidden" name="next" value="/home" />
+    </form>
+    {% if documents %}
+                    <ul>
+                    {% for document in documents %}
+                            <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}
+                            <img src="{{ document.docfile.url }}" alt="{{ document.docfile.name }}">
+                            </a></li>
+                    {% endfor %}
+                    </ul>
+            {% else %}
+                    <p>No documents.</p>
+            {% endif %}
+
+    <form method ="get" action="login">
+                <!--  <input type="submit" value="Login" /> -->
+                <button class="btn">Login</button>
+             </form>
+{% endblock %}
