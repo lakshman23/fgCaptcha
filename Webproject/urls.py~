@@ -21,16 +21,25 @@ from django.contrib import admin
 
 
 urlpatterns = patterns('',
+    # (r'^app4u/', include('app4u.urls')),
     (r'^$', 'app4u.views.index'),
     (r'^admin/', include(admin.site.urls)),
+#     url(r'^$', homey),
     url(r'^app4u/$', homey),
-    url(r'^app4u/admin_login/$', admin_loginn),
-    url(r'^app4u/admin_login/done/$', select),
-    url(r'^app4u/admin_login/done/real_selected$', include('app4u.urls')), 
-    url(r'^app4u/admin_login/done/fake_selected$', include('app4u.urls1')), 
+    url(r'^app4u/admin_login/$', admin_loginn), 
+    url(r'^app4u/admin_login/done/$', include('app4u.urls')), 
     # url(r'^app4u/admin_login/$',include('app4u.urls')),
     # url(r'^app4u/user_login/$',user_loginn),
     url(r'^app4u/user_login/$',include('app4u.urls2')),
-
+#     # url(r'^accounts/login/$', 'django.contrib.auth.views.homey'), # If user is not login it will redirect to login page
+#     url(r'^register/$', register),
+#     url(r'^register/success/$', register_success),
+#     url(r'^admin_login/$', admin_loginn),
+#     url(r'^user_login/$', user_loginn),
+#     url(r'^user_login/homey$', homey),
+#      url(r'^homey/user_login/$', user_loginn),
+#     # url(r'^home/$', home),
+#     url(r'^homey/$', homey),
+#     url(r'^homey/admin_login/$', admin_loginn),
 )  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

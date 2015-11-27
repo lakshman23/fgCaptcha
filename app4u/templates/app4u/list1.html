@@ -6,15 +6,16 @@
         </head>
 
         <body>
-            <form action="{% url "list" %}" method="post" enctype="multipart/form-data">
+            <form action="{% url "list1" %}" method="post" enctype="multipart/form-data">
                     {% csrf_token %}
                     <p>{{ form.non_field_errors }}</p>
-                    <p>{{ form.real_image.label_tag }} </p>
+                    <p>{{ form.fake_image.label_tag }} </p>
                     <p>
-                            {{ form.real_image.errors }}
-                            {{ form.real_image }}
+                            {{ form.fake_image.errors }}
+                            {{ form.fake_image }}
                     </p>
                     <p><input type="submit" value="Upload" /></p>
             </form>
         </body>
+
 </html>

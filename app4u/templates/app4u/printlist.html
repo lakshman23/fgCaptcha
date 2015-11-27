@@ -7,7 +7,6 @@
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% static 'myapp/style.css' %}" />
     <div id = "login">
-        <div id = "title"><h1>Discussion Forum</h1></div>
         <div id = "input">
     <form method="post" action=".">{% csrf_token %}
             <label for="id_username">Username:</label>{{ form.username }}
@@ -19,8 +18,8 @@
     {% if documents %}
                     <ul>
                     {% for document in documents %}
-                            <li><a href="{{ document.docfile.url }}">{{ document.docfile.name }}
-                            <img src="{{ document.docfile.url }}" alt="{{ document.docfile.name }}">
+                            <li><a href="{{ document.fake.url }}">{{ document.fake.name }}
+                            <img src="{{ document.fake.url }}" alt="{{ document.fake.name }}">
                             </a></li>
                     {% endfor %}
                     </ul>
