@@ -63,25 +63,17 @@ def list1(request):
     )
 
 def listprint(request):
-    if request.method == 'POST':
-        form = FakeForm(request.POST, request.FILES)
+    # if request.method == 'POST':
+    form = FakeForm(request.POST, request.FILES)
+    form1 = RealForm(request.POST, request.FILES)
 
-        if form.is_valid():
-            newdoc = Images_Fake(fake = request.FILES['fake_image'])
-            newdoc.save()
-
-            # Redirect to the document list after POST
-            return HttpResponseRedirect(reverse('list'))
-    else:
-        form = FakeForm() # A empty, unbound form
-
-    # Load documents for the list page
     documents = Images_Fake.objects.all() 
+    documents1 = Images_Real.objects.all() 
 
     # Render list page with the documents and the form
     return render_to_response(
         'app4u/printlist.html',
-        {'documents': documents, 'form': form},
+        {'documents': documents, 'form': form,'documents1': documents1, 'form1': form1},
         context_instance=RequestContext(request)
     )
 

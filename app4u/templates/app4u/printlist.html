@@ -18,9 +18,26 @@
     {% if documents %}
                     <ul>
                     {% for document in documents %}
-                            <li><a href="{{ document.fake.url }}">{{ document.fake.name }}
-                            <img src="{{ document.fake.url }}" alt="{{ document.fake.name }}">
-                            </a></li>
+                            <!-- <li><a href="{{ document.fake.url }}">{{ document.fake.name }} -->
+                            <div>
+                                <img src="{{ document.fake.url }}" alt="{{ document.fake.name }}" height="250px" width="250px">
+                            </div>
+                         <!--    <img src="{{ document.fake.url }}" alt="{{ document.fake.name }}"> -->
+                            <!-- </a></li> -->
+                    {% endfor %}
+                    </ul>
+            {% else %}
+                    <p>No documents.</p>
+            {% endif %}
+
+    {% if documents1 %}
+                    <ul>
+                    {% for document in documents1 %}
+                            <!-- <li><a href="{{ document.real.url }}">{{ document.real.name }} -->
+                            <div>
+                                <img src="{{ document.real.url }}" alt="{{ document.real.name }}" height="250px" width="250px">    
+                            </div>
+                            <!-- </a></li> -->
                     {% endfor %}
                     </ul>
             {% else %}
