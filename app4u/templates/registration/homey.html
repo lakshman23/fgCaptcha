@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block head %}<marquee behavior="alternate">Welcome to fgCaptcha Test</marquee>{% endblock %}
+{% block content %}
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/bootstrap.css' %}" />
+     <div class = "combine">
+        <div class = "logos">
+            <a href = "admin_login"><button type = "button" class = "btn btn-success btn-lg">Admin Mode</button></a>
+            <br><br><br>
+            <a href="user_login"><button type = "button" size = "" class = "btn btn-danger btn-lg">User Mode&nbsp&nbsp</button></a>
+        </div>
+        <div class = "images">
+            <img class = "home image" src = "background.jpg" id = "img">
+        </div>
+    </div>
+{% endblock %}
