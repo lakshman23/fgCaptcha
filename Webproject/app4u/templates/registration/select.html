@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block head %}<marquee behavior="alternate" class = "welcome">Welcome to fgCaptcha Test</marquee>{% endblock %}
+{% block content %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/bootstrap.css' %}" />
+    <div class = "combine">
+        <div style = "padding-left: 280pt; padding-top: 100pt">
+            <a href = "real_selected"><button type = "button" class = "btn btn-danger btn-lg"> Add Real Images </button></a>
+            <br><br><br>
+        </div>
+        <div style = "padding-left: 150pt; padding-top: 100pt">
+            <a href="fake_selected"><button type = "button" size = "" class = "btn btn-success btn-lg"> Add Fake Images</button></a>
+        </div>
+    </div>
+{% endblock %}

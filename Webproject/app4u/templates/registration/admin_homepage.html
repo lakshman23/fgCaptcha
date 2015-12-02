@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}<marquee behavior="alternate" class = "welcome">Welcome to fgCaptcha Test</marquee>{% endblock %}
+​
+{% block content %}
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/bootstrap.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/style.css' %}" />
+<script type="text/javascript" src = "{% static 'app4u/admin.js' %}"></script>
+	<div class = "options">
+		<div class = "combine">
+			<div>
+				<div>
+					<a href = "done"><button type = "button" onclick = "image()" class = "btn btn-success btn-lg">Insert Images</button></a>
+					<br><br><br>
+				</div>
+				<div>
+					<a href = "testing"><button type = "button" class = "btn btn-danger btn-lg">&nbsp&nbsp&nbsp&nbsp&nbsp Test &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+					<br><br><br>
+				</div>
+			</div>
+			<p id = "test" style = "color: orange; padding-left: 150pt; font-weight: bold; font-size: 25pt"></p>
+		</div>
+		<div>
+			<a href = "logout_page"><button type = "button" class = "btn btn-primary btn-lg">&nbsp&nbsp&nbsp Log Out &nbsp&nbsp&nbsp&nbsp</button></a>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block head %}<title>Django File Upload Example</title><marquee behavior="alternate" class = "welcome">Welcome to fgCaptcha Test</marquee>{% endblock %}
+{% block content %}
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/bootstrap.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/style2.css' %}" />
+<body>
+    <form action="{% url "list" %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p class = "upload">Uploading Real Image</p>
+        <p>{{ form.non_field_errors }}</p>
+        <p>{{ form.real_image.label_tag }} </p>
+        <p>
+            {{ form.real_image.errors }}
+            {{ form.real_image }}
+        </p>
+        <br><br>
+        <p id = "submit"><input type="submit" class = "btn btn-success btn-lg" value="Upload" /></p>
+        <a href="/app4u/admin_login/admin_homepage" color = "green">back to admin home</a>
+    </form>
+{% endblock %}

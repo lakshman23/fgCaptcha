@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block head %}<marquee behavior="alternate" class = "welcome">Welcome to fgCaptcha Test</marquee>{% endblock %}
+{% block content %}
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/bootstrap.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/style.css' %}" />
+<script type="text/javascript" >
+    var images = [], x = -1;
+    images[0] = "{% static 'app4u/images/h3.jpg' %}";
+    images[1] = "{% static 'app4u/images/h4.jpg' %}";
+    images[2] = "{% static 'app4u/images/h2.jpg' %}";
+    images[3] = "{% static 'app4u/images/h1.jpg' %}";
+    function displayNextImage() {
+        x = (x === images.length - 1) ? 0 : x + 1;
+        document.getElementById("img").src = images[x];
+    }
+
+    function startTimer() {
+        setInterval(displayNextImage, 1800);
+    }
+</script>
+<body onload = "startTimer()">
+    <div class = "combine">
+        <div class = "logos">
+            <a href = "admin_login"><button type = "button" class = "btn btn-success btn-lg">Admin Mode</button></a>
+            <br><br><br>
+            <a href="user_login"><button type = "button" class = "btn btn-danger btn-lg">User Mode &nbsp&nbsp</button></a>
+        </div>
+        <div class = "images">
+            <img class = "homeImage" src = "{% static 'app4u/images/h1.jpg' %}" id = "img">
+        </div>
+    </div>
+{% endblock %}

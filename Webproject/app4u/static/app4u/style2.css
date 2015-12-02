@@ -1,0 +1,43 @@
+body {
+	background: url("images/hill.jpg");
+}
+
+div.combine {
+	display: flex;
+}
+
+.welcome {
+	font-size: 30pt;
+	color: pink;
+	font-weight: bold;
+	padding-top: 20pt;
+	padding-left: 50;
+}
+
+#submit {
+	padding-left: 90pt;
+}
+
+a {
+	font-size: 10pt;
+	padding-left: 80pt;
+}
+
+p.upload {
+	font-size: 14pt;
+	color: green;
+	text-align: center;
+	font-weight: bold;
+	padding-bottom: 25pt;
+}
+
+form {
+	margin-top: 80pt;
+	margin-left: 320pt;
+	height: 220pt;
+	width: 300pt;
+	background-color: silver;
+	padding-top: 10pt;
+	padding-left: 20pt;
+	padding-bottom: 0;
+}

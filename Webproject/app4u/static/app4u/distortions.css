@@ -1,0 +1,27 @@
+img.brightness {
+	-webkit-filter: brightness(200%);
+}
+
+img.invert {
+	-webkit-filter: invert(100%);
+}
+
+img.blur {
+	-webkit-filter: blur(3px);
+}
+
+img.contrast {
+	-webkit-filter: contrast(200%);
+}
+
+img.opacity {
+	-webkit-filter: opacity(30%);
+}
+
+img.sepia {
+	-webkit-filter: sepia(100%);
+}
+
+img.grayscale {
+	-webkit-filter: grayscale(100%);
+}

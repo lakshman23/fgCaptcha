@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}<marquee behavior="alternate" class = "welcome">Welcome to fgCaptcha Test</marquee>{% endblock %}
+​
+{% block content %}
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/style.css' %}" />
+<script type="text/javascript" src = "{% static 'app4u/validation.js' %}"></script>
+    <div class = "combine">
+        <div>
+            <img class = "icon" src = "{% static "app4u/images/Admin.png" %}">
+        </div>
+        <div>
+            <form onsubmit = "return validate()" action = "admin_homepage">
+                <h3 style = "text-align: left; padding-top: 2pt;padding-bottom: 10pt;padding-left: 60pt; font-family: Meiryo; font-size: 20pt">&nbsp&nbsp&nbsp Login Form</h3>
+                <pre>   Admin Name   <input type = "text" id = "admin" placeholder = "admin name"></pre>
+                <pre>   Password        <input type = "password" id = "password" placeholder = "**********"></pre>
+                <p align = "center" style = "color: red" id = "invalid"></p>
+                <p align = "center"><input class = "submit" type = "image" src = "{% static "app4u/images/login_icon.png" %}"></p>
+            </form>
+        </div>
+    </div>
+{% endblock %}

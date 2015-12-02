@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block head %}<title>Starting Page</title><marquee behavior="alternate" style = "color: green; padding-top: 20pt; font-size: 30pt">Welcome to fgCaptcha Test</marquee>{% endblock %}
+{% block content %}
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+{% load staticfiles %}
+<body background = "{% static 'app4u/images/start.jpg' %}">
+    <a href="app4u"><p style = "color: green; font-size: 25pt; font-weight: bold; padding-left: 350pt; padding-top: 80pt">Click Here for Homepage</button></a>
+{% endblock %}

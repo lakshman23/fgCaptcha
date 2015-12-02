@@ -1,0 +1,89 @@
+body {
+	width: 1200;
+	height: 500;
+	background-image: url("images/background.png");
+}
+
+.welcome {
+	font-size: 30pt;
+	color: pink;
+	font-weight: bold;
+	padding-top: 20pt;
+	padding-left: 50;
+}
+
+.caption {
+	padding-left: 700;
+	font-size: 20;
+	font-weight: bold;
+	padding-top: 0;
+	color: black;
+}
+
+#captcha {
+	margin-top: 10pt;
+	margin-left: 80pt;
+	height: 370pt;
+	width: 390pt;
+	background-color: white;
+	padding-top: 10pt;
+	padding-left: 45pt;
+	padding-bottom: 0;
+}
+
+div.options {
+	padding-top: 100pt;
+	padding-left: 100pt;
+}
+
+.icon {
+	padding-left: 50pt;
+	padding-top: 50pt;
+	width: 150pt;
+	height: 150pt;
+}
+
+.submit {
+	height: 25pt;
+	width: 60pt;
+}
+
+div.images {
+	padding-left: 120pt;
+	padding-top: 80pt;
+}
+
+img.homeImage {
+	width: 400pt;
+	height: 200pt;
+} 
+
+div.logos {
+	padding-left: 150pt;
+	padding-top: 120pt;
+}
+
+div.combine {
+	display: flex;
+}
+
+.admin {
+	padding-top: 50;
+	padding-right: 50;
+}
+
+pre {
+	font-size: 16pt;
+	font-family: Arial;
+}
+
+form {
+	margin-top: 50pt;
+	margin-left: 150pt;
+	height: 220pt;
+	width: 300pt;
+	background-color: Cornsilk;
+	padding-top: 10pt;
+	padding-left: 20pt;
+	padding-bottom: 0;
+}

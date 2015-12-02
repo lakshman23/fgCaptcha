@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <title>Django File Upload Example</title>
+        </head>
+        <body>
+            <form action="{% url "list1" %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <p>{{ form.non_field_errors }}</p>
+                    <p>{{ form.fake_image.label_tag }} </p>
+                    <p>
+                            {{ form.fake_image.errors }}
+                            {{ form.fake_image }}
+                    </p>
+                    <p><input type="submit" value="Upload" /></p>
+            </form>
+        </body>
+</html>

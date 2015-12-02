@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block title %}{% endblock %}
+{% block head %}{% endblock %}
+​
+{% block content %}
+
+ {% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/style.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'app4u/distortions.css' %}" />
+<script type="text/javascript">
+    var images = [];
+    images[0] = "{% static 'app4u/images/1.jpg' %}";
+    images[1] = "{% static 'app4u/images/2.jpg' %}";
+    images[2] = "{% static 'app4u/images/3.jpg' %}";
+    images[3] = "{% static 'app4u/images/4.jpg' %}";
+    images[4] = "{% static 'app4u/images/5.jpg' %}";
+    images[5] = "{% static 'app4u/images/6.jpg' %}";
+    images[6] = "{% static 'app4u/images/7.jpg' %}";
+    images[7] = "{% static 'app4u/images/8.jpg' %}";
+    images[8] = "{% static 'app4u/images/9.jpg' %}";
+
+    /*var distortion = [];
+    distortion[0] = "invert";
+    distortion[1] = "brightness";
+    distortion[2] = "blur";
+    distortion[3] = "contrast";
+    distortion[4] = "opacity";
+    distortion[5] = "sepia";
+    distortion[6] = "grayscale";*/
+
+    function displayImage() {
+        /*var num2 = getRandomNumber2();
+        num2 = num2 % 7;
+        document.getElementById("img").class = distortion[num2];*/
+    	var num = getRandomNumber();
+        num = num % 9;
+        document.getElementById("img").src = images[num];
+    }
+
+    function getRandomNumber() {
+    	return Math.floor(Math.random() * 9) + 1;
+	}
+
+    function getRandomNumber2() {
+        return Math.floor(Math.random() * 7) + 1;
+    }
+</script>
+<style>
+        .random {
+            position:absolute;
+            margin-left: 345pt; 
+            margin-top: 110pt;
+        }
+        /*.z {
+            margin-left: 100pt;
+            margin-top: 80pt;
+        }*/
+
+        #r1{  width:100px; }
+        #r2{  width:100px; }
+        #r3{  width:100px; }
+        #r4{  width:100px; }
+    </style>
+    <script>
+        function init() {
+            w = 430;
+            h = 280;
+            rd = document.getElementsByTagName('div');
+            for(c=0;c<rd.length;c++) {
+                if(rd[c].className=='random') {
+                    xCoord=Math.floor(Math.random()*w);
+                    yCoord=Math.floor(Math.random()*h);
+                    if(xCoord>=w-rd[c].offsetWidth-10){
+                        xCoord=w-rd[c].offsetWidth-10;
+                    }
+                    if(xCoord<=10){
+                        xCoord=10;
+                    }
+                    if(yCoord>=h-rd[c].offsetHeight-10){
+                        yCoord=h-rd[c].offsetHeight-10;
+                    }
+                    if(yCoord<=10){
+                        yCoord=10;
+                    }
+                    rd[c].style.left=xCoord+'px';
+                    rd[c].style.top=yCoord+'px';
+                }
+            }
+        }
+        window.addEventListener?
+        window.addEventListener('load',init,false):
+        window.attachEvent('onload',init);
+    </script>
+<body onload = "displayImage()">
+	<div class = "combine">
+        <div>
+            <img class = "icon" src = "{% static 'app4u/images/User.png' %}">
+        </div>
+        <div>
+        	<form id = "captcha" style = "background-color: PapayaWhip">
+        		<p style = "font-size: 18pt; font-weight: bold;font-family: Comic Sans MS; padding-bottom: 0pt; color: green; margin-top: 10pt"> Face imaGe Captcha </p>
+        		<img class = "" id = "img" border = "5pt" width = "410pt" height = "300pt" src = "" style = "margin-left: 18pt; margin-top: 0pt; position: relative; top: 0; left: 0">
+        		<!-- <img src="{% static 'app4u/images/15.jpg' %}" style = "width: 75px; height: 75px; position: absolute; top: 200px; left: 600px"><br><br><br> -->
+                <div class="z">
+                    <div class="random" id="r1"><img src="{{ documents1.0.real.url }}" width="100px" height="100px"></div>
+                    <div class="random" id="r2"><img src="{{ documents.0.fake.url }}" width="100px" height="100px"></div>
+                    <div class="random" id="r3"><img src="{{ documents1.1.real.url }}" width="100px" height="100px"></div>
+                    <div class="random" id="r4"><img src="{{ documents.1.fake.url }}" width="100px" height="100px"></div>
+                </div>
+                <br><br>
+                <div class = "combine">
+                    <div>
+                        <input type = "image" name = "submit" src = "{% static 'app4u/images/Submit.png' %}" style = "margin-left: 50pt; width: 80pt; height: 30pt; padding-top: 5pt">
+        	        </div>
+                    <div>
+                        <a href = ""><img src="{% static 'app4u/images/reload.jpg' %}" style = "width: 60pt; height: 40pt; padding-left: 100pt">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
